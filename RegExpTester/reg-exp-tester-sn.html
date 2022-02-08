@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+
+ Author: Simeon Ngalamou
+
+ Class:  Software Engineering
+
+ Project: Lab 2 / Reg Exp Tester
+
+ Description: This is the final version of my eg Exp Tester application and is being submitted as part of Lab 2.
+
+-->
+  <head>
+    <title>RegExp</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <style>
+        h1 {font-size: 24px; 
+            font-family: verdana;
+            text-align: center;}
+        h2 {font-family: verdana;
+            font-size: 14px;}
+        p {font-family: Courier;
+           font-size: 14px;}
+    </style>
+    <script>
+      function tester() {
+        var regxp = new RegExp(document.getElementById("regexp").value);  // creates a new "regxp" variable that takes in the regular expression the client entered
+        console.log(regxp.test(document.getElementById("string").value)); // sends a message to the console whether or not the test returned true or false
+
+        if (regxp.test(document.getElementById("string").value)) {        // completes a regexp test on the values given by the client and replace a header with the test's results
+          document.querySelector("h1").innerText = "True"; }              // here is where the text is replaced
+
+        else {
+          document.querySelector("h1").innerText = "False"; }  
+      }
+    </script>
+  </head> 
+
+<body>   
+  <h1>RegExp Tester</h1>
+  <h2>Instructions</h2>
+
+  <p>Type your expression into the top fiel, and the string to test against it in the bottom box.</p> 
+  <p>Then click the button to test.</p>
+  <br>
+
+  <h2>Type Your Expression here</h2>
+  <input id="regexp" type="text"  size="10" height="400" value = "lap"><br><br>
+
+  <h2>Type Your String here</h2>
+  <input id="string" type="text"  pattern= "regexp" size="10" height="400" value = "laptop"><br><br>
+
+  <br><button type="button"  onclick="tester()">Test</button>
+
+</body>
+  </html>
+
